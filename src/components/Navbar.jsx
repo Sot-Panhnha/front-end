@@ -13,7 +13,7 @@ export default function Navbar() {
                     <NavLink to="/">
                         <img
                             className="w-[90px] h-auto sm:w-[120px] md:w-[150px]"
-                            src={'http://localhost:1337/uploads/kep_gardens_logo_84754c8e95.png'}
+                            src={'https://firebasestorage.googleapis.com/v0/b/kepgardens-575e7.appspot.com/o/kep-gardens-logo.png?alt=media&token=7e38a494-68a3-445c-a431-e2c2f2a840f3'}
                             alt='School'
                         />
                     </NavLink>
