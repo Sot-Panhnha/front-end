@@ -53,8 +53,8 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <div className='hidden lg:flex'>
-                    <button className='border-none bg-transparent text-black mr-4 hover:text-green-700'>Login</button>
-                    <button className='px-4 py-1 bg-green-500 rounded text-white hover:bg-green-900'>Sign Up</button>
+                    <a href="/login" className='py-1 border-none bg-transparent text-black mr-4 hover:text-green-700'>Login</a>
+                    <a href='/register' className='px-4 py-1 bg-green-500 rounded text-white hover:bg-green-900'>Sign Up</a>
                 </div>
                 <div className='lg:hidden' onClick={handleClick}>
                     {
@@ -83,8 +83,12 @@ export default function Navbar() {
                         </NavLink>
                     ))}
                     <div className='flex flex-col pt-10'>
-                        <button className='border px-5  py-1 bg-transparent text-black mb-5 hover:text-green-700 hover:bg-green-100'>Login</button>
-                        <button className='px-5 py-1 bg-green-500 rounded text-white hover:bg-green-900'>Sign Up</button>
+                        <NavLink className='border px-5  py-1 bg-transparent text-black mb-5 hover:text-green-700 hover:bg-green-100 text-center' to='/login'>
+                            Login
+                        </NavLink>
+                        <NavLink to='/register' className='px-5 py-1 bg-green-500 rounded text-white hover:bg-green-900 text-center'>
+                            Sign Up
+                        </NavLink>                   
                     </div>
                 </div>
             </ul>
