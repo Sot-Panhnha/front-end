@@ -1,15 +1,7 @@
-import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import BlogPageLayout from "../components/BlogPageLayout.jsx";
+import React from 'react'
 
-const VolunteerPage = () => {
-    return(
-        <>
-            <Navbar/>
-        
-            <Footer/>
-        </>
-    )
+export default function VolunteerPage() {
+  return (
+    <div>VolunteerPage</div>
+  )
 }
-export default VolunteerPage;

@@ -7,7 +7,6 @@ import BlogPage from "./BlogPage.jsx";
 import VolunteerPage from "./VolunteerPage.jsx";
 import SignInPage from "./SignInPage.jsx";
 import SignUpPage from "./SignUpPage.jsx";
-import CreateBlogs from "./CreateBlogs.jsx";
 
 function main() {
   return (
@@ -20,7 +19,6 @@ function main() {
           <Route path="/volunteer" element={<VolunteerPage />} />
           <Route path="/login" element={<SignInPage />} />
           <Route path="/register" element={<SignUpPage />} />
-          <Route path="/create" element={<CreateBlogs/>}/>
       </Routes>
     </React.StrictMode>
   );

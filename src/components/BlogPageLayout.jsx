@@ -4,7 +4,7 @@ import {
   AiFillYoutube,
   AiOutlineTwitter,
 } from "react-icons/ai";
-import data from "/src/data/blog_data.json";
+import data from "../data/blog_data.json";
 const BlogPageLayout = () => {
   return (
     <div className="w-full py-2 sm:py-[40px] bg-gray-100">
@@ -19,11 +19,11 @@ const BlogPageLayout = () => {
           </div>
           <div className="w-full h-full grid-col-4 col-span-12 lg:col-span-8 grid xl:col-span-4 xl:pl-20 pt-3 xl:pt-0">
             <div>
-               <div className="grid grid-cols-4 gap-2">
-                  <RecentPost />
-                  <FollowUs />
+              <div className="grid grid-cols-4 gap-2">
+                <RecentPost />
+                <FollowUs />
               </div>
-            </div> 
+            </div>
           </div>
         </div>
       </div>
@@ -44,13 +44,14 @@ const MainBlogCard = () => {
           </div>
           <div className="p-3">
             <p className="font-Poppins text-gray-400 pb-1 text-sm ">
-              {data[0].minutes}
+              {data[0].date}
             </p>
             <h3 className="font-Poppins font-bold text-xl my-1 ">
-              {data[0].title}
+              {data[0].title.substring(0, 50)}
             </h3>
             <p className="font-Poppins text-gray-900 text-start">
-              {data[0].description}
+              {data[0].description.substring(0, 200)}...{" "}
+              <span className=" text-green-800">Read More</span>
             </p>
           </div>
         </div>
@@ -73,13 +74,14 @@ const MainBlogCard2 = () => {
           </div>
           <div className="p-3">
             <p className="font-Poppins text-gray-400 pb-1 text-sm ">
-              {data[1].minutes}
+              {data[1].date}
             </p>
             <h3 className="font-Poppins font-bold text-xl my-1 ">
               {data[1].title}
             </h3>
             <p className="font-Poppins text-gray-900 text-start">
-              {data[1].description}
+              {data[1].description.substring(0, 150)}...{" "}
+              <span className=" text-green-800">Read More</span>
             </p>
           </div>
         </div>
@@ -89,19 +91,20 @@ const MainBlogCard2 = () => {
           <div className="relative overflow-hidden bg-no-repeat bg-cover">
             <img
               className="h-44 md:h-[200px]  w-full object-cover"
-              src={data[1].image}
+              src={data[2].image}
             />
             <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden hover:opacity-30 opacity-0 bg-fixed bg-gray-300 transition duration-300 ease-in-out"></div>
           </div>
           <div className="p-3">
             <p className="font-Poppins text-gray-400 pb-1 text-sm ">
-              {data[1].minutes}
+              {data[2].date}
             </p>
             <h3 className="font-Poppins font-bold text-xl my-1 ">
-              {data[1].title}
+              {data[2].title}
             </h3>
             <p className="font-Poppins text-gray-900 text-start">
-              {data[1].description}
+              {data[2].description.substring(0, 150)}...{" "}
+              <span className=" text-green-800">Read More</span>
             </p>
           </div>
         </div>
@@ -125,14 +128,17 @@ const RecentPost = () => {
           <div className="pt-2 px-1">
             <div className="relative overflow-hidden bg-no-repeat bg-cover">
               <img
-                className="h-56 xl:h-[180px] w-full object-cover"
+                className="h-44 xl:h-[180px] w-full object-cover"
                 src={data[3].image}
               />
               <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden hover:opacity-30 opacity-0 bg-fixed bg-gray-300 transition duration-300 ease-in-out"></div>
             </div>
-            <p className="font-Poppins text-sm pt-2">{data[3].minutes}</p>
+            <p className="font-Poppins text-sm pt-2">{data[3].date}</p>
             <h5 className="pt-2 font-Poppins font-semibold">{data[3].title}</h5>
-            <p className="font-Poppins pt-1">{data[3].description}</p>
+            <p className="font-Poppins pt-1">
+              {data[3].description.substring(0, 100)}...
+              <span className=" text-green-800">Read More</span>
+            </p>
           </div>
         </div>
       </div>
@@ -184,7 +190,7 @@ const FollowUs = () => {
     </>
   );
 };
-const MorePost = () => {
+const MorePost = (props) => {
   return (
     <>
       <div className="col-span-10 pt-5">
@@ -196,170 +202,37 @@ const MorePost = () => {
             <hr />
           </div>
         </div>
-        <div className="bg-white mt-2">
-          <div className="grid grid-cols-10 grid-rows-2">
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                <img
-                  src={data[0].image}
-                  alt="image"
-                  className="h-44 md:h-[250px] w-full object-cover"
-                />
-                <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden hover:opacity-30 opacity-0 bg-fixed bg-gray-300 transition duration-300 ease-in-out"></div>
+        {data.map((blogs) => (
+          <div className="bg-white mt-2">
+            <div className="grid grid-cols-10 grid-rows-2">
+              <div className="col-span-10 row-span-2 md:row-span-2 md:col-span-5">
+                <div className="relative overflow-hidden bg-no-repeat bg-cover">
+                  <img
+                    src={blogs.image}
+                    alt="image"
+                    className="h-44 md:h-[200px] w-full object-cover"
+                  />
+                  <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden hover:opacity-30 opacity-0 bg-fixed bg-gray-300 transition duration-300 ease-in-out"></div>
+                </div>
               </div>
-            </div>
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="p-3">
-                <h3 className="font-Poppins font-bold text-xl my-1 ">
-                  {data[1].title}
-                </h3>
-                <p className="font-Poppins text-gray-900 text-start">
-                  {data[1].description}
-                </p>
-                <p className="font-Poppins text-gray-400 pt-3 text-sm ">
-                  {data[1].minutes}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-white mt-2">
-          <div className="grid grid-cols-10 grid-rows-2">
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                <img
-                  src={data[0].image}
-                  alt="image"
-                  className="h-44 md:h-[250px] w-full object-cover"
-                />
-                <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden hover:opacity-30 opacity-0 bg-fixed bg-gray-300 transition duration-300 ease-in-out"></div>
-              </div>
-            </div>
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="p-3">
-                <h3 className="font-Poppins font-bold text-xl my-1 ">
-                  {data[1].title}
-                </h3>
-                <p className="font-Poppins text-gray-900 text-start">
-                  {data[1].description}
-                </p>
-                <p className="font-Poppins text-gray-400 pt-3 text-sm ">
-                  {data[1].minutes}
-                </p>
+              <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
+                <div className="p-3">
+                  <h3 className="font-Poppins font-bold text-xl my-1 ">
+                    {blogs.title}
+                  </h3>
+                  <p className="font-Poppins text-gray-900 text-start">
+                    {blogs.description.substring(0,250)}...
+              <span className=" text-green-800">Read More</span>
+                  </p>
+                  <p className="font-Poppins text-gray-400 pt-3 text-sm ">
+                    {blogs.date}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="bg-white mt-2">
-          <div className="grid grid-cols-10 grid-rows-2">
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                <img
-                  src={data[0].image}
-                  alt="image"
-                  className="h-44 md:h-[250px] w-full object-cover"
-                />
-                <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden hover:opacity-30 opacity-0 bg-fixed bg-gray-300 transition duration-300 ease-in-out"></div>
-              </div>
-            </div>
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="p-3">
-                <h3 className="font-Poppins font-bold text-xl my-1 ">
-                  {data[1].title}
-                </h3>
-                <p className="font-Poppins text-gray-900 text-start">
-                  {data[1].description}
-                </p>
-                <p className="font-Poppins text-gray-400 pt-3 text-sm ">
-                  {data[1].minutes}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-white mt-2">
-          <div className="grid grid-cols-10 grid-rows-2">
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                <img
-                  src={data[0].image}
-                  alt="image"
-                  className="h-44 md:h-[250px] w-full object-cover"
-                />
-                <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden hover:opacity-30 opacity-0 bg-fixed bg-gray-300 transition duration-300 ease-in-out"></div>
-              </div>
-            </div>
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="p-3">
-                <h3 className="font-Poppins font-bold text-xl my-1 ">
-                  {data[1].title}
-                </h3>
-                <p className="font-Poppins text-gray-900 text-start">
-                  {data[1].description}
-                </p>
-                <p className="font-Poppins text-gray-400 pt-3 text-sm ">
-                  {data[1].minutes}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-white mt-2">
-          <div className="grid grid-cols-10 grid-rows-2">
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                <img
-                  src={data[0].image}
-                  alt="image"
-                  className="h-44 md:h-[250px] w-full object-cover"
-                />
-                <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden hover:opacity-30 opacity-0 bg-fixed bg-gray-300 transition duration-300 ease-in-out"></div>
-              </div>
-            </div>
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="p-3">
-                <h3 className="font-Poppins font-bold text-xl my-1 ">
-                  {data[1].title}
-                </h3>
-                <p className="font-Poppins text-gray-900 text-start">
-                  {data[1].description}
-                </p>
-                <p className="font-Poppins text-gray-400 pt-3 text-sm ">
-                  {data[1].minutes}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-white mt-2">
-          <div className="grid grid-cols-10 grid-rows-2">
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                <img
-                  src={data[0].image}
-                  alt="image"
-                  className="h-44 md:h-[250px] w-full object-cover"
-                />
-                <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden hover:opacity-30 opacity-0 bg-fixed bg-gray-300 transition duration-300 ease-in-out"></div>
-              </div>
-            </div>
-            <div className="col-span-10 row-span-1 md:row-span-2 md:col-span-5">
-              <div className="p-3">
-                <h3 className="font-Poppins font-bold text-xl my-1 ">
-                  {data[1].title}
-                </h3>
-                <p className="font-Poppins text-gray-900 text-start">
-                  {data[1].description}
-                </p>
-                <p className="font-Poppins text-gray-400 pt-3 text-sm ">
-                  {data[1].minutes}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-      
     </>
   );
 };

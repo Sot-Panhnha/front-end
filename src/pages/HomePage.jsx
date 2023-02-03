@@ -12,7 +12,7 @@ const HomePage = () => {
           <Slider/>
           <HomeBox/>
           <TextArea/>
-          <Card/>
+          {/* <Card/> */}
           <Footer/>
 
       </div>
