@@ -3,13 +3,14 @@ import Navbar from "../components/Navbar";
 // import { signInWithEmailAndPassword } from 'firebase/auth'
 
 // import React, { useState } from 'react'
-// import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom";
+
 function SignIn() {
   // const [email , setEmail] = useState('');
   // const [password , setPassword] = useState('');
   // const navigate = useNavigate();
   // const onLogin = (e) => {
-  //     e.preventDefault();
+  //     e.preventDefault();                       
   //     signInWithEmailAndPassword(auth, email, password)
   //     .then((userCredential) => {
   //         // Signed in
@@ -27,22 +28,22 @@ function SignIn() {
     <div className="flex justify-center pt-56 px-3">
       <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
         <form class="space-y-6" action="#">
-          <h5 class="text-xl font-medium text-gray-900 dark:text-white">
-            Sign In
+          <h5 class="text-xl font-medium text-gray-900 dark:text-white text-center">
+            Login
           </h5>
           <div>
             <label
               htmlFor="email"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
-              Your email
+              Email*
             </label>
             <input
               type="email"
               name="email"
               id="email"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-              placeholder="name@company.com"
+              placeholder="username@gmail.com"
               required
               // onChange={(e)=> setEmail(e.target.value)}
             />
@@ -52,18 +53,19 @@ function SignIn() {
               htmlFor="password"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
-              Your password
+              Password*
             </label>
             <input
-              type="password"
-              name="password"
-              id="password"
+              type="verify-password"
+              name="verify-password"
+              id="verify-password"
               placeholder="••••••••"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               required
               // onChange={(e)=>setPassword(e.target.value)}
             />
           </div>
+          
           <div class="flex items-start">
             <div class="flex items-start">
               <div class="flex items-center h-5">
@@ -75,6 +77,7 @@ function SignIn() {
                   required
                 />
               </div>
+
               <label
                 htmlFor="remember"
                 class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -86,7 +89,7 @@ function SignIn() {
               href="#"
               class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
             >
-              Lost Password?
+              Forgot Password?
             </a>
           </div>
           <button
@@ -94,15 +97,15 @@ function SignIn() {
             class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             // onClick={onLogin}
           >
-            Login to your account
+            Login 
           </button>
           <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-            Not registered?
+            Don't have an account?
             <a
               href="/register"
               class="text-blue-700 hover:underline dark:text-blue-500"
             >
-              Create account
+              Register here
             </a>
           </div>
         </form>
