@@ -1,52 +1,53 @@
-import { Footer } from 'flowbite-react';
 import React from 'react'
 import {AiOutlineTwitter, AiOutlineYoutube,AiOutlineFacebook } from 'react-icons/ai'
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function VolunteerPage() {
   return (
     <div>
       <Navbar/>
       <BodyVoluteer/>
-      <About/>
+      {/* <About/> */}
       <Projects/>
       <Information/>
       <Contact/>
       <Footer/>
+      
     </div>
     
   )
 }
 function About () {
   return (
-    <section className="bg-secondery text-gray-400 px-5 py-32" id="about">
+    <section className="bg-secondery text-gray-900 px-5 py-32" id="about">
       <div className="container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between">
         <div className="about-info">
           <h2 className="text-4xl font-bold mb-5 border-b-[5px] w-[180px] border-[#51efb0] pb-2">
-            About Us
+            About Information 
           </h2>
 
           <p className="pb-5">
-            Hi, My Name Is Rohima Akther everyone calls me Amrin. I am a
-            Frontend Developer. I build beautifull websites with React and
-            Tailwind CSS.
+             Hi, this KEP GARDENS is a community development project. It is a non-profit,
+             non-government organization with no political or religious affiliations. 
+              Kep Gardens is committed to the training and education of young people in a rural Cambodian community.
           </p>
           <p className="pb-5">
-            I am proficient in Frontend skills like React.js, Redux, Redux Tool
-            Kit, Axios, Tailwind CSS, SaSS, Css3 and many more.
+             Hi, this KEP GARDENS is a community development project. It is a non-profit,
+             non-government organization with no political or religious affiliations.
           </p>
 
-          <p>In backend I know Node.js, Express.js, MongoDB, and Mongoose</p>
+          <p>Ininformation.Hi, this KEP GARDENS is a community development project.</p>
           <p>
-            In my spare time I create YouTube videos and write blogs on my Blog.
-            Where I talk about programming theory and build various projects.
+             Hi, this KEP GARDENS is a community development project. It is a non-profit,
+             non-government organization with no political or religious affiliations.
           </p>
         </div>
 
         <div className="about-img">
           <img
             src=""
-            alt="coding illustration"
+            alt="volunteer"
             className="lgw-[80%] md:ml-auto"
           />
         </div>
@@ -56,12 +57,12 @@ function About () {
 };
 function BodyVoluteer (){
   return (
-    <section className="bg-primary px-5 text-gray-400 py-32">
+    <section className="bg-green-200 px-5 text-gray-400 py-32">
       <div className="container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between">
         <div className="hero-info pb-5 md:pb-0">
-          <h1 className="text-4xl lg:text-6xl">
-            Hi, <br />Welcome<span className="text-accent">to</span>Kep Gardens <br />
-            School
+          <h1 className="text-5xl lg:text-6xl">
+            Hi, <br />Welcome <span className="text-accent"> to </span>Kep  <br />
+            Gardens School
           </h1>
 
           <p className="py-5">
@@ -102,9 +103,9 @@ function BodyVoluteer (){
 
         <div className="hero-img">
           <img
-            src=''
+            src='src\asset\volunteer.jpg'
             alt="coding illustration"
-            className="lgw-[80%] ml-auto"
+            className="w-[50%] ml-auto"
           />
         </div>
       </div>
@@ -114,14 +115,6 @@ function BodyVoluteer (){
 function Contact() {
   return (
     <section className="bg-secondery px-5 py-32" id="contact">
-      <button class="bg-blue-500 hover:bg-blue-700 text-gray-400 font-bold py-2 px-4 border border-blue-700 rounded mx-1" >
-         No 
-        </button>
-        <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500  hover:bg-green-100 dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-         <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-         Yes 
-         </span>
-        </button>
       <div className="text-center md:w-[60%] mx-auto text-gray-900">
         <h2 className="text-4xl font-bold mb-5 border-b-[5px] w-[200px] mx-auto border-[#51efb0] pb-2">
           Contact Us 
@@ -146,19 +139,19 @@ function Contact() {
 function Information ()  {
   const post = [
     {
-      img: "https://res.cloudinary.com/practicaldev/image/fetch/s--AuZFJnr6--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a8okx5rxzuh5fojibsy3.png",
-      title: "How to build a counter app with JavaScript",
+      img: "src/asset/book.png",
+      title: "Stories",
       url: "https://dev.to/coderamrin/how-to-build-a-counter-app-with-javascript-439p",
     },
     {
-      img: "https://res.cloudinary.com/practicaldev/image/fetch/s--FsJZ6lhI--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gv7y2de8kalk9l0820ag.jpg",
-      title: "JavaScript Ultimate Guide 02: The DOM",
+      img: "src/asset/book.png",
+      title: "Stories",
       url: "https://dev.to/coderamrin/javascript-ultimate-guide-02-the-dom-3ho9",
     },
   ];
 
   return (
-    <section className="bg-primary text-gray-400 px-5 py-32" id="Information">
+    <section className="bg-green-200 text-gray-400 px-5 py-32" id="Information">
       <div className="container mx-auto grid md:grid-cols-2 items-center md:justify-between">
         <div className="about-info mb-5">
           <h2 className="text-4xl font-bold mb-5 border-b-[5px] w-[100px] border-[#51efb0] pb-2">
@@ -193,32 +186,27 @@ function Information ()  {
 function Projects () {
   const projects = [
     {
-      img: '',
+      img: 'src/asset/book.png',
       title: "devlog",
       desc: " Volunteer stories",
-      view: "https://devlogg.onrender.com/",
-      watch: "https://github.com/Coderamrin/devlog",
+
     },
     {
-      img: '',
+      img: 'src/asset/book.png',
       title: "uilogs",
       desc: "Volunteer stories",
       view: "https://uilogs.xyz/",
       watch: "https://github.com/Coderamrin/html-templates",
     },
     {
-      img: '',
+      img: 'src/asset/book.png',
       title: "css projects",
       desc: "Volunteer stories",
-      view: "https://build-10-css-projects.netlify.app/",
-      watch: "https://github.com/Coderamrin/build-10-css-projects",
     },
     {
-      img: '',
+      img: 'src/asset/book.png',
       title: "get Inspirred",
       desc: "Volunteer stories",
-      view: "https://get-inspirred.netlify.app/",
-      watch: "https://github.com/Coderamrin/get-inspired",
     },
   ];
 
@@ -231,8 +219,7 @@ function Projects () {
           </h2>
 
           <p className="pb-5">
-            These are some of my best projects. I have built these with React,
-            MERN and vanilla CSS. Check them out.
+            This is some of information 
           </p>
         </div>
 
